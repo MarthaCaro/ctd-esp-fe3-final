@@ -21,53 +21,85 @@ code {
 
 h1{
   text-align: center;
+  margin-top: 0;
 }
 
 nav{
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
+  margin-left: 14%;
+  margin-right: 16%;
+  justify-content: space-between;
   padding: 1rem;
 }
+
+.moonDark{
+  color: black;
+  background-color: white;
+}
+
+.moonLight{
+  color:yellow;
+  background-color: #000;
+}
+
+
+
 
 a{
   color: #000;
   text-decoration: none;
   margin: 5px;
   cursor: pointer;
+  font-weight: bold;
 }
 a:hover{
   color: rgb(136, 136, 136);
 } 
 
-footer {
+.footerAbajo {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   padding: 2rem;
   position: relative;
   bottom: 0;
-  width: 90%;
+  margin-left: 14%;
+  margin-right: 16%;
   height: 40px;
   margin-top: 2rem;
 }
 
-footer > img{
+.footerAbajo .powered img{
   width: 200px;
   margin: 0;
 }
-footer > p{
+.footerAbajo .powered p{
   margin: 0;
   padding-top: 0.7rem;
+}
+
+.powered{
+  display: flex;
+}
+
+.rojo{
+  margin-top: 30px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  height: 30px;
 }
 
 form{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   width: 300px;
   height: 100px;
   margin: 0 auto;
+}
+
+input{
+  height: 20px;
 }
 
 .card{
@@ -76,6 +108,7 @@ form{
   flex-direction: column;
   align-items: center;
   width: 200px;
+  height: 300px;
   padding: 0.5rem 0.5rem 0 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
 }
@@ -84,14 +117,17 @@ form{
   border: 0.5px solid rgb(206, 217, 142);
 }
 
+.card-align{
+  justify-content: center;
+}
+
 .card-grid{
   display: flex;
-  justify-content: space-evenly;
   gap: 1rem;
-  width: 90vw;
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
+  width: 70%;
 }
 
 table {
@@ -113,10 +149,24 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.dark{
+.dark{ 
   background-color: #12121296;
   color: white;
+  
 }
 .dark > a {
   color: white;
+}
+
+.imagenDoctor{
+  width: 200px;
+  height: 250px;
+}
+
+
+.icons img{
+  background-color: black;
+  width: 25px;
+  margin: 3px;
+  padding: 3px;
 }
