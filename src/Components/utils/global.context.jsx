@@ -1,4 +1,4 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useReducer, useMemo } from "react";
 
 export const initialState = {theme: "light", data: [], changeTheme: ()=>{}}
 const ContextGlobal = createContext(initialState);
@@ -27,13 +27,15 @@ export const ContextProvider = ({ children }) => {
   //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
   const[dentistaApp, dispatchDentistaApp]= useReducer(dispatchDentistaAppReducer, initialState);
 
-  useEffect(()=>{
-    async function fetchData() {
-      let response = await fetch(`https://jsonplaceholder.typicode.com/users/`);
-      let data =  await response.json();
-      dispatchDentistaApp({type: "AddUsers", data: data});
-    }
-    fetchData();
+  async function fetchData() {
+    let response = await fetch(`https://jsonplaceholder.typicode.com/users/`);
+    let data =  await response.json();
+    console.log(data);
+    dispatchDentistaApp({type: "AddUsers", data: data});
+  }
+
+  useMemo(async ()=>{
+    return await fetchData();
   }, []);
 
   const changeThemeHandler=()=>{
